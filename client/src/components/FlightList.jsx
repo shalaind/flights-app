@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Link } from 'react-router-dom'; 
+import Book from "./Book";
 
 export default class FlightList extends Component {
   state = {
@@ -63,7 +64,8 @@ export default class FlightList extends Component {
                     <div class="column">
                       <h1>${flight.cost}</h1> <br />
 
-                      <button class="button is-danger"> <Link to={ `/book/${flight.number}` }>Book</Link> </button>
+
+                      <button class="button is-danger"> <Link style={{color: "white"}} to={ `/book/${flight.airline}/${flight.number}/${flight.departs.airport}/${flight.arrives.airport}` }>Book</Link> </button>
 
                     </div>
                   </div>
